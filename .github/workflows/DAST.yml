@@ -3,11 +3,11 @@ on: [push]
 
 jobs:
   zap_scan:
-    runs-on: self-hosted
+    runs-on: [self-hosted,azure-runners]
     name: Scan the web application
     steps:
       - name: ZAP Scan
         uses: zaproxy/action-baseline@v0.6.1
         with:
           target: 'http://testphp.vulnweb.com/'
-          cmd_options: '-a'
+          
